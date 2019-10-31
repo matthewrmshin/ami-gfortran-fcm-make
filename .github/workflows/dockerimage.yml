@@ -17,5 +17,5 @@ jobs:
       run: docker build . --file Dockerfile --tag "${TAG}"
     - name: Basic test for the Docker image
       run: |
-        docker run --rm -t -i -v "${PWD}/test:/opt/test" "${TAG}" \
+        docker run --rm -v "${PWD}/test:/opt/test" "${TAG}" \
         bash -c "fcm make -C '/opt/test' && '/opt/test/build/bin/hello.bin'"
