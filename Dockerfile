@@ -14,3 +14,5 @@ RUN curl -L "https://github.com/metomi/fcm/archive/${FCM_VN}.tar.gz" | tar -xz
 WORKDIR /usr/local/bin
 RUN echo -e '#!/bin/sh'"\n"'exec /opt/fcm-'"${FCM_VN}"'/bin/fcm "$@"' >'fcm' \
     && chmod +x 'fcm'
+
+WORKDIR /opt
